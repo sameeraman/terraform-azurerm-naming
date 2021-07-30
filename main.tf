@@ -14,12 +14,6 @@ resource "random_string" "main" {
   number  = var.unique-include-numbers
 }
 
-resource "random_string" "first_letter" {
-  length  = 1
-  special = false
-  upper   = false
-  number  = false
-}
 
 
 locals {
