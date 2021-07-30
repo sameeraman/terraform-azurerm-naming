@@ -4,7 +4,7 @@ This repo provides resource naming for terraform deployments in a moduler format
 This supports all azure resource types in terraform. when calling the resource type just remove the 
 ## Usage Examples
 
-```json
+```tf
 module "naming" {
   source              = "github.com/sameeraman/terraform-azurerm-naming"
   company-prefix      = "fbk"
