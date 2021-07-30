@@ -24,8 +24,8 @@ resource "random_string" "first_letter" {
 
 locals {
   random                 = random_string.main.result
-  prefix                 = join("-", var.company-prefix, var.region-prefix, var. environment-prefix)
-  prefix_safe            = lower(join("", var.company-prefix, var.region-prefix, var. environment-prefix))
+  prefix                 = join("-", [var.company-prefix, var.region-prefix, var. environment-prefix])
+  prefix_safe            = lower(join("", [var.company-prefix, var.region-prefix, var. environment-prefix]))
   suffix                 = join("-", var.suffix)
   suffix_unique          = join("-", concat(var.suffix, [local.random]))
   suffix_safe            = lower(join("", var.suffix))
