@@ -618,7 +618,7 @@ locals {
       regex       = "^[a-zA-Z0-9-_]+$"
     }
     dev_test_linux_virtual_machine = {
-      name        = substr(join("", compact([local.prefix_safe, "labvm", local.prefix_safe])), 0, 64)
+      name        = substr(join("", compact([local.prefix_safe, "labvm", local.suffix_safe])), 0, 64)
       name_unique = substr(join("", compact([local.prefix_safe, "labvm", local.suffix_unique_safe])), 0, 64)
       dashes      = true
       slug        = "labvm"
@@ -628,7 +628,7 @@ locals {
       regex       = "^[a-zA-Z0-9-]+$"
     }
     dev_test_windows_virtual_machine = {
-      name        = substr(join("", compact([local.prefix_safe, "labvm", local.prefix_safe])), 0, 15)
+      name        = substr(join("", compact([local.prefix_safe, "labvm", local.suffix_safe])), 0, 15)
       name_unique = substr(join("", compact([local.prefix_safe, "labvm", local.suffix_unique_safe])), 0, 15)
       dashes      = true
       slug        = "labvm"
@@ -1178,7 +1178,7 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     linux_virtual_machine = {
-      name        = substr(join("", compact([local.prefix_safe, "vm", local.prefix_safe])), 0, 64)
+      name        = substr(join("", compact([local.prefix_safe, "vm", local.suffix_safe])), 0, 64)
       name_unique = substr(join("", compact([local.prefix_safe, "vm", local.suffix_unique_safe])), 0, 64)
       dashes      = true
       slug        = "vm"
@@ -1188,7 +1188,7 @@ locals {
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
     linux_virtual_machine_scale_set = {
-      name        = substr(join("", compact([local.prefix_safe, "vmss", local.prefix_safe])), 0, 64)
+      name        = substr(join("", compact([local.prefix_safe, "vmss", local.suffix_safe])), 0, 64)
       name_unique = substr(join("", compact([local.prefix_safe, "vmss", local.suffix_unique_safe])), 0, 64)
       dashes      = true
       slug        = "vmss"
@@ -2138,8 +2138,8 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-.]+[a-zA-Z0-9_]$"
     }
     virtual_machine = {
-      name        = substr(join("-", compact([local.prefix, "vm", local.suffix])), 0, 15)
-      name_unique = substr(join("-", compact([local.prefix, "vm", local.suffix_unique])), 0, 15)
+      name        = substr(join("", compact([local.prefix_safe, "vm", local.suffix_safe])), 0, 15)
+      name_unique = substr(join("", compact([local.prefix_safe, "vm", local.suffix_unique_safe])), 0, 15)
       dashes      = true
       slug        = "vm"
       min_length  = 1
@@ -2218,7 +2218,7 @@ locals {
       regex       = "^[a-zA-Z0-9][a-zA-Z0-9-._]+[a-zA-Z0-9_]$"
     }
     windows_virtual_machine = {
-      name        = substr(join("", compact([local.prefix_safe, "vm", local.prefix_safe])), 0, 15)
+      name        = substr(join("", compact([local.prefix_safe, "vm", local.suffix_safe])), 0, 15)
       name_unique = substr(join("", compact([local.prefix_safe, "vm", local.suffix_unique_safe])), 0, 15)
       dashes      = true
       slug        = "vm"
@@ -2228,7 +2228,7 @@ locals {
       regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
     }
     windows_virtual_machine_scale_set = {
-      name        = substr(join("", compact([local.prefix_safe, "vmss", local.prefix_safe])), 0, 15)
+      name        = substr(join("", compact([local.prefix_safe, "vmss", local.suffix_safe])), 0, 15)
       name_unique = substr(join("", compact([local.prefix_safe, "vmss", local.suffix_unique_safe])), 0, 15)
       dashes      = true
       slug        = "vmss"
