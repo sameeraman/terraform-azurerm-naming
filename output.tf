@@ -882,3 +882,7 @@ output "windows_virtual_machine" {
 output "windows_virtual_machine_scale_set" {
   value = local.az.windows_virtual_machine_scale_set
 }
+
+output "user_assigned_identity" {
+  value = local.az.user_assigned_identity
+}
