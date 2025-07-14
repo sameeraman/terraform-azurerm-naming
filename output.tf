@@ -1,4 +1,20 @@
 
+output "ai_services" {
+  value = local.az.ai_services
+}
+
+output "ai_foundry_account" {
+  value = local.az.ai_foundry_account
+}
+
+output "ai_foundry_hub" {
+  value = local.az.ai_foundry_hub
+}
+
+output "ai_foundry_project" {
+  value = local.az.ai_foundry_project
+}
+
 output "analysis_services_server" {
   value = local.az.analysis_services_server
 }
