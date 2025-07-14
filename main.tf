@@ -27,6 +27,16 @@ locals {
   // Names based in the recomendations of
   // https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/naming-and-tagging
   az = {
+    ai_services = {
+      name        = substr(join("", compact([local.prefix_safe, "ais", local.suffix_safe])), 0, 63)
+      name_unique = substr(join("", compact([local.prefix_safe, "ais", local.suffix_unique_safe])), 0, 63)
+      dashes      = false
+      slug        = "ais"
+      min_length  = 3
+      max_length  = 63
+      scope       = "resourceGroup"
+      regex       = "^[a-z][a-z0-9]+$"
+    }
     ai_foundry_account = {
       name        = substr(join("", compact([local.prefix_safe, "aif", local.suffix_safe])), 0, 63)
       name_unique = substr(join("", compact([local.prefix_safe, "aif", local.suffix_unique_safe])), 0, 63)
